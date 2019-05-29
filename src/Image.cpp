@@ -165,7 +165,7 @@ void Image::computeResponseFunction(const Image & r) {
                 int pos = y * width + x;
                 double v = usePixels[pos];
                 double nv = rUsePixels[pos];
-                if (v >= nv && v < satThreshold) {
+                if (v >= nv && v < response.threshold) {
                     numerator += v * r.response(nv);
                     denom += v * v;
                 }
